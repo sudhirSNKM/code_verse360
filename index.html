@@ -332,41 +332,36 @@
   </footer>
 
   <script>
-    const teamEventCost = 150;
-    const individualEventCost = 150+50;
+    const registrationFee = 150;
+  const eventFee = 50;
 
-    const teamEvents = [
-      "Paper Presentation",
-      "Technical Quiz",
-      "Code Relay",
-      "Bug Busters",
-      "Mix & Fix",
-      "Reverse Coding & Blind Coding",
-      "Tech Treasure Hunt",
-      "Solving What Matters"
-    ];
+  const teamEvents = [
+    "Paper Presentation",
+    "Technical Quiz",
+    "Code Relay",
+    "Bug Busters",
+    "Mix & Fix",
+    "Reverse Coding & Blind Coding",
+    "Tech Treasure Hunt",
+    "Solving What Matters"
+  ];
 
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-      checkbox.addEventListener('change', updateTotalAmount);
-    });
+  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', updateTotalAmount);
+  });
 
-    function updateTotalAmount() {
-      let total = 0;
-      const checkedEvents = document.querySelectorAll('input[type="checkbox"]:checked');
-      let teamEventsCount = 0;
-      let individualEventsCount = 0;
+  function updateTotalAmount() {
+    const checkedEvents = document.querySelectorAll('input[type="checkbox"]:checked');
+    const numberOfEvents = checkedEvents.length;
 
-      checkedEvents.forEach(checkbox => {
-        if (teamEvents.includes(checkbox.value)) {
-          teamEventsCount++;
-        } else {
-          individualEventsCount++;
-        }
-      });
+    let total = 0;
 
-      total += (teamEventsCount * teamEventCost) + (individualEventsCount * individualEventCost);
-      document.getElementById('totalAmount').textContent = `Total: ₹${total}`;
+    if (numberOfEvents > 0) {
+      total = registrationFee + (numberOfEvents * eventFee);
     }
+
+    document.getElementById('totalAmount').textContent = `Total: ₹${total}`;
+  }
 
     async function submitForm(event) {
       event.preventDefault();

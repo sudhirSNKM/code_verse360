@@ -18,6 +18,7 @@
       font-family: 'Poppins', sans-serif;
       background: radial-gradient(circle at top left, #1d1f2f, #050510);
       color: #f0f0f0;
+      line-height: 1.6;
     }
 
     header {
@@ -68,6 +69,7 @@
       border-radius: 10px;
       text-align: center;
       border: 1px solid #00f0ff;
+      font-size: 1em;
     }
 
     form {
@@ -86,21 +88,29 @@
 
     input,
     select {
-      padding: 10px;
+      padding: 12px;
       border-radius: 5px;
       border: none;
       width: 100%;
       background-color: #f9f9f9;
       color: #000;
+      font-size: 1em;
     }
 
     .checkbox-group label {
-      display: block;
-      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 1em;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      transform: scale(1.2);
     }
 
     button {
-      padding: 12px;
+      padding: 14px;
       font-size: 1em;
       background: #00f0ff;
       color: #000;
@@ -130,6 +140,53 @@
     #qrCode {
       margin: 20px auto;
       text-align: center;
+    }
+
+    /* Mobile Responsive Fixes */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      header h2 {
+        font-size: 1em;
+      }
+
+      h3 {
+        font-size: 1.5em;
+      }
+
+      ul {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      li {
+        font-size: 0.95em;
+        padding: 15px;
+      }
+
+      form {
+        padding: 25px 20px;
+      }
+
+      input,
+      select {
+        font-size: 1em;
+      }
+
+      .checkbox-group label {
+        font-size: 0.95em;
+        gap: 10px;
+      }
+
+      .checkbox-group input[type="checkbox"] {
+        transform: scale(1.3);
+      }
+
+      section {
+        padding: 30px 15px;
+      }
     }
   </style>
 </head>
@@ -235,7 +292,7 @@
         <p id="totalAmount">Total: ₹0</p>
       </section>
 
-      <img src="image.jpeg">
+      <img src="image.jpeg" style="max-width: 100%; border-radius: 10px;">
 
       <label for="transaction">Transaction ID</label>
       <input type="text" id="transaction" name="transaction" required />
@@ -246,7 +303,6 @@
       <button type="submit">Register</button>
     </form>
   </section>
-
 
   <section class="contact">
     <h3>Contact Us</h3>
@@ -262,11 +318,9 @@
   </footer>
 
   <script>
-    // Total Amount Calculation Logic
-    const teamEventCost = 150; // Cost for team events
-    const individualEventCost = 80; // Cost for individual events
+    const teamEventCost = 150;
+    const individualEventCost = 80;
 
-    // Define team events
     const teamEvents = [
       "Paper Presentation",
       "Technical Quiz",
@@ -278,7 +332,6 @@
       "Solving What Matters"
     ];
 
-    // Update total amount when checkboxes are clicked
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
       checkbox.addEventListener('change', updateTotalAmount);
     });
@@ -286,8 +339,6 @@
     function updateTotalAmount() {
       let total = 0;
       const checkedEvents = document.querySelectorAll('input[type="checkbox"]:checked');
-
-      // Count team events and individual events
       let teamEventsCount = 0;
       let individualEventsCount = 0;
 
@@ -299,15 +350,13 @@
         }
       });
 
-      // Calculate total cost
       total += (teamEventsCount * teamEventCost) + (individualEventsCount * individualEventCost);
       document.getElementById('totalAmount').textContent = `Total: ₹${total}`;
     }
 
     async function submitForm(event) {
-      event.preventDefault(); // Prevent default form submission
+      event.preventDefault();
 
-      // Gather form data
       const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -323,12 +372,9 @@
       };
 
       try {
-        // Send data to the backend
         const response = await fetch('http://localhost:3000/save', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
         });
 

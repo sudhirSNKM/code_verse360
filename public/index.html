@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeVerse360 | National Level Symposium</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #1d1f2f, #050510);
+      color: #f0f0f0;
+    }
+
+    header {
+      background: #0f0f1a;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3em;
+      color: #6efff3;
+      text-shadow: 0 0 15px #12fff7;
+    }
+
+    header h2 {
+      font-weight: 300;
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #a1eafb;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h3 {
+      font-size: 2em;
+      color: #00e0ff;
+      border-bottom: 2px solid #00e0ff;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      list-style: none;
+      gap: 20px;
+      padding: 0;
+    }
+
+    li {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #00f0ff;
+    }
+
+    form {
+      background: rgba(10, 10, 25, 0.8);
+      padding: 40px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border: 1px solid #00f0ff;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    input,
+    select {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 100%;
+      background-color: #f9f9f9;
+      color: #000;
+    }
+
+    .checkbox-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 1em;
+      background: #00f0ff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #00c9d4;
+    }
+
+    footer {
+      background: #0f0f1a;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+      font-size: 0.9em;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    #qrCode {
+      margin: 20px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CodeVerse360</h1>
+    <h2>National Level Technical Symposium | 23 & 24 April</h2>
+  </header>
+
+  <section>
+    <h3>About CodeVerse360</h3>
+    <p style="text-align:center; max-width: 800px; margin : auto;">CodeVerse360 is a National Level Technical Symposium organized by passionate students of Computer Science and Engineering. This is a platform to showcase your skills, explore emerging technologies, network with brilliant minds, and unlock new opportunities in the world of tech and beyond. Get ready for competitions, creativity, and career-boosting events.</p>
+  </section>
+
+  <section>
+    <h3>Technical Events</h3>
+    <ul>
+      <li>Paper Presentation</li>
+      <li>Technical Quiz</li>
+      <li>Code Pictionary</li>
+      <li>Mix & Fix</li>
+      <li>Tech Treasure Hunt</li>
+      <li>Bug Busters</li>
+      <li>Code Relay</li>
+      <li>Reverse Coding & Blind Coding</li>
+      <li>Solving What Matters</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Non-Technical Events</h3>
+    <ul>
+      <li>Carrom</li>
+      <li>Puzzle Game</li>
+      <li>Scavenger Hunting</li>
+      <li>UI & UX</li>
+      <li>Glitch in the Matrix</li>
+      <li>Dare the Picture</li>
+      <li>Games Arena</li>
+      <li>Photography</li>
+      <li>E Games</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Registration Form</h3>
+    <form onsubmit="submitForm(event)">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email ID</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="year">Year of Study</label>
+      <input type="text" id="year" name="year" required />
+
+      <label for="course">Course of Study</label>
+      <input type="text" id="course" name="course" required />
+
+      <label for="institution">Institution Name</label>
+      <input type="text" id="institution" name="institution" required />
+
+      <label>Events</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="events" value="Paper Presentation"> Paper Presentation</label>
+        <label><input type="checkbox" name="events" value="Technical Quiz"> Technical Quiz</label>
+        <label><input type="checkbox" name="events" value="Code Pictionary"> Code Pictionary</label>
+        <label><input type="checkbox" name="events" value="Mix & Fix"> Mix & Fix</label>
+        <label><input type="checkbox" name="events" value="Tech Treasure Hunt"> Tech Treasure Hunt</label>
+        <label><input type="checkbox" name="events" value="Bug Busters"> Bug Busters</label>
+        <label><input type="checkbox" name="events" value="Code Relay"> Code Relay</label>
+        <label><input type="checkbox" name="events" value="Reverse Coding & Blind Coding"> Reverse Coding & Blind Coding</label>
+        <label><input type="checkbox" name="events" value="Solving What Matters"> Solving What Matters</label>
+        <label><input type="checkbox" name="events" value="Carrom"> Carrom</label>
+        <label><input type="checkbox" name="events" value="Puzzle Game"> Puzzle Game</label>
+        <label><input type="checkbox" name="events" value="Scavenger Hunting"> Scavenger Hunting</label>
+        <label><input type="checkbox" name="events" value="UI & UX"> UI & UX</label>
+        <label><input type="checkbox" name="events" value="Glitch in the Matrix"> Glitch in the Matrix</label>
+        <label><input type="checkbox" name="events" value="Dare the Picture"> Dare the Picture</label>
+        <label><input type="checkbox" name="events" value="Games Arena"> Games Arena</label>
+        <label><input type="checkbox" name="events" value="Photography"> Photography</label>
+        <label><input type="checkbox" name="events" value="E Games"> E Games</label>
+      </div>
+
+      <label for="food">Food Preference</label>
+      <select id="food" name="food">
+        <option value="veg">Veg</option>
+        <option value="non-veg">Non Veg</option>
+      </select>
+
+      <label for="accommodation">Accommodation</label>
+      <select id="accommodation" name="accommodation">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <section>
+        <h3>Total Amount</h3>
+        <p id="totalAmount">Total: ₹0</p>
+      </section>
+
+      <img src="image.jpeg">
+
+      <label for="transaction">Transaction ID</label>
+      <input type="text" id="transaction" name="transaction" required />
+
+      <label for="upi">UPI ID (Sender)</label>
+      <input type="text" id="upi" name="upi" required />
+
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+
+  <section class="contact">
+    <h3>Contact Us</h3>
+    <div style="max-width: 600px; margin: auto; background: rgba(15,15,30,0.7); padding: 30px; border-radius: 10px; border: 1px solid #00f0ff; box-shadow: 0 0 15px #00e0ff;">
+      <p><strong>Email:</strong> <a href="mailto:codeverse360@gmail.com" style="color:#6efff3;">codeverse360@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+919876543210" style="color:#6efff3;">+91 98765 43210</a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/codeverse360" target="_blank" style="color:#6efff3;">@codeverse360</a></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CodeVerse360 | Designed with passion by the CSE Department
+  </footer>
+
+  <script>
+    // Total Amount Calculation Logic
+    const teamEventCost = 150; // Cost for team events
+    const individualEventCost = 80; // Cost for individual events
+
+    // Define team events
+    const teamEvents = [
+      "Paper Presentation",
+      "Technical Quiz",
+      "Code Relay",
+      "Bug Busters",
+      "Mix & Fix",
+      "Reverse Coding & Blind Coding",
+      "Tech Treasure Hunt",
+      "Solving What Matters"
+    ];
+
+    // Update total amount when checkboxes are clicked
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', updateTotalAmount);
+    });
+
+    function updateTotalAmount() {
+      let total = 0;
+      const checkedEvents = document.querySelectorAll('input[type="checkbox"]:checked');
+
+      // Count team events and individual events
+      let teamEventsCount = 0;
+      let individualEventsCount = 0;
+
+      checkedEvents.forEach(checkbox => {
+        if (teamEvents.includes(checkbox.value)) {
+          teamEventsCount++;
+        } else {
+          individualEventsCount++;
+        }
+      });
+
+      // Calculate total cost
+      total += (teamEventsCount * teamEventCost) + (individualEventsCount * individualEventCost);
+      document.getElementById('totalAmount').textContent = `Total: ₹${total}`;
+    }
+
+    async function submitForm(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Gather form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        year: document.getElementById('year').value,
+        course: document.getElementById('course').value,
+        institution: document.getElementById('institution').value,
+        foodPreference: document.getElementById('food').value,
+        accommodation: document.getElementById('accommodation').value,
+        transactionId: document.getElementById('transaction').value,
+        upiId: document.getElementById('upi').value,
+        selectedEvents: Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(checkbox => checkbox.value)
+      };
+
+      try {
+        // Send data to the backend
+        const response = await fetch('http://localhost:3000/save', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+          alert('Registration successful!');
+        } else {
+          alert('Error submitting form. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      }
+    }
+  </script>
+</body>
+
+</html>
